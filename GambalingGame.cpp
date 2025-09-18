@@ -3,19 +3,39 @@
 using namespace std;
 
 // Forward declarations
+static void DepostingBallens();
 static void Star_Game(string userInput);
 static void HowToPlay();
 static void PlayingGame();
 static void startUpMessige();
 
 // Global variables
-int userBallens = 5000; // Starting pot
+int userBallens; // Starting pot
 string userInput;
 
 int main()
 {
+    DepostingBallens();
     startUpMessige();
     return 0;
+}
+
+static void DepostingBallens()
+{
+    cout << "Pleaces Deposit Cash Before starting the game" << endl;
+    cout << "Desposit : ";
+    cin >> userBallens;
+
+    while (userBallens > 0 || userBallens > 5000)
+    {
+        if (userBallens > 100)
+            cout << "insinicent funds, minnimal deposit 100sek. pleace try agin" << endl;
+        else
+            cout << "insinicent funds, Maximall deposit 5000sek. pleace try agin" << endl;
+
+        cout << "Desposit : ";
+        cin >> userBallens;
+    }
 }
 
 // Writes out the menu
@@ -34,6 +54,7 @@ static void startUpMessige()
     cin >> userInput;
     Star_Game(userInput);
 }
+
 
 // Validates the input form the user for the start up menu
 static void Star_Game(string userInput) {
