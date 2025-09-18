@@ -26,7 +26,7 @@ static void DepostingBallens()
     cout << "Desposit : ";
     cin >> userBallens;
 
-    while (userBallens > 0 || userBallens > 5000)
+    while (userBallens < 100 || userBallens > 5000)
     {
         if (userBallens > 100)
             cout << "insinicent funds, minnimal deposit 100sek. pleace try agin" << endl;
@@ -85,5 +85,6 @@ static void HowToPlay()
 // Starts up the game to and lets the player play
 static void PlayingGame()
 {
-    cout << "Starting game " << endl;
+    cout << "Starting game... " << endl;
+
 }
